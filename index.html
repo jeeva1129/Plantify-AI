@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafLens | AI Plant Identifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">🌿 LeafLens<span>.</span></a>
+    <span class="nav-tag">ML-08 · AI Powered</span>
+</nav>
+
+<main class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">✦ SMART MEDICINAL PLANT IDENTIFICATION</div>
+        <h1>Discover Nature<br>with <span>Artificial Intelligence.</span></h1>
+        <p class="subtitle">
+            Upload a leaf image and let our AI identify medicinal plants
+            in seconds.
+        </p>
+
+        <section class="upload-card">
+            <form id="uploadForm">
+                <label for="imageInput" class="upload-area" id="uploadArea">
+                    <div class="upload-icon">🌱</div>
+                    <h3>Drop your leaf image here</h3>
+                    <p>or click to browse from your device</p>
+                    <span class="file-types">JPG · JPEG · PNG</span>
+                </label>
+
+                <input type="file" id="imageInput" name="image"
+                       accept="image/jpeg,image/png" hidden>
+
+                <img id="preview" alt="Leaf preview" hidden>
+
+                <button type="submit" id="predictBtn" disabled>
+                    Identify Plant <span>→</span>
+                </button>
+            </form>
+
+            <div id="result" class="result" hidden>
+                <div class="result-icon">🍃</div>
+                <p class="result-label">IDENTIFIED PLANT</p>
+                <h2 id="plantName"></h2>
+                <p>AI Confidence: <strong id="confidence"></strong></p>
+            </div>
+
+            <p id="message" class="message"></p>
+        </section>
+
+        <div class="plant-list">
+            <span>IDENTIFIES</span>
+            <b>Aloe Vera</b>
+            <b>Moringa</b>
+            <b>Neem</b>
+            <b>Tulsi</b>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>🌿 LeafLens ML-08 · Medicinal Plant Leaf Classification</p>
+    <p>AI-powered educational project</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
